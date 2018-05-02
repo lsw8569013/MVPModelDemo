@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:test="http://schemas.android.com/tools"
+    android:layout_centerInParent="true">
+
+<TextView
+    android:id="@+id/tv_text_waitdeal"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="等待审核"
+    android:textSize="@dimen/sp_20"
+    android:textColor="@color/white"
+    android:layout_centerHorizontal="true"
+    />
+
+<TextView
+    android:id="@+id/tv_deal_check_num"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/dp_5"
+    android:text="0"
+    test:text="20"
+    android:layout_below="@+id/tv_text_waitdeal"
+    android:textColor="@color/white"
+    android:textSize="@dimen/sp_32"
+    android:layout_centerHorizontal="true"
+    />
+
+</RelativeLayout>

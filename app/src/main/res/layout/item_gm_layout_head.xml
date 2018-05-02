@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:test="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginTop="@dimen/dp_10"
+    android:layout_marginBottom="@dimen/dp_10"
+    >
+
+     <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginLeft="@dimen/dp_25"
+            android:layout_marginRight="@dimen/dp_25"
+            android:background="@color/white"
+            >
+
+         <TextView
+             android:id="@+id/tv_day_str"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_alignParentBottom="true"
+             android:layout_alignParentLeft="true"
+             android:layout_alignParentStart="true"
+             android:text="今日放款"
+             android:textSize="@dimen/sp_16"
+             android:textColor="@color/little_back"
+
+             />
+
+
+            <TextView
+                android:id="@+id/tv_day_count_price"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                test:text="¥ 203 / 16笔"
+                android:textSize="@dimen/sp_16"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:gravity="right"
+                android:text="¥ 0 / 0笔"
+                android:singleLine="true"
+                android:textColor="@color/gray_item"
+                />
+
+        </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/rv_acy_nodata"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_100"
+        android:layout_marginLeft="@dimen/dp_20"
+        android:layout_marginRight="@dimen/dp_20"
+        android:layout_marginTop="@dimen/dp_20"
+        android:background="@drawable/gray_bg_draw"
+
+        >
+
+        <ImageView
+            android:id="@+id/iv_nodata"
+            android:layout_width="@dimen/dp_35"
+            android:layout_height="@dimen/dp_35"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/dp_18"
+            app:srcCompat="@drawable/nodata" />
+
+        <TextView
+            android:id="@+id/tv_nodata_head"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/iv_nodata"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/dp_8"
+            android:text="暂时没有数据"
+            android:textColor="@color/gray_item"
+            android:textSize="@dimen/sp_16" />
+    </RelativeLayout>
+
+
+</LinearLayout>
+

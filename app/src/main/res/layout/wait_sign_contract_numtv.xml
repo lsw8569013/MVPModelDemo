@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:test="http://schemas.android.com/tools"
+    android:layout_centerInParent="true"
+    test:background="@color/blue"
+    >
+
+    <TextView
+        android:id="@+id/tv_text_waitdeal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="待签合同"
+        android:textSize="@dimen/sp_20"
+        android:textColor="@color/white"
+        android:layout_centerHorizontal="true"
+        />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/tv_text_waitdeal"
+        >
+
+        <TextView
+            android:id="@+id/tv_sig_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_5"
+            android:text="0"
+            test:text="20"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_32"
+            />
+
+        <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text=" 单"-->
+            <!--android:textColor="@color/white"-->
+            <!--android:gravity="top"-->
+            <!--android:layout_marginTop="@dimen/dp_22"-->
+            <!--android:layout_toRightOf="@+id/tv_sig_num"-->
+            <!--/>-->
+
+    </RelativeLayout>
+
+</RelativeLayout>

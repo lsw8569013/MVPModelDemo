@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:test="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_marginLeft="@dimen/dp_20"
+    android:layout_marginRight="@dimen/dp_20"
+    android:layout_marginBottom="@dimen/dp_11"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/dp_20"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/sp_23"
+            android:text="今日应回款"
+
+            android:layout_weight="1"
+            android:textColor="@color/little_back"
+            />
+
+        <TextView
+            android:id="@+id/tv_check_overdue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="查询逾期"
+            android:layout_gravity="center_vertical"
+            android:textSize="@dimen/dp_14"
+            android:textColor="@color/little_back"
+            android:textStyle="bold"
+            />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/dp_20"
+        >
+
+        <RelativeLayout
+            android:layout_width="@dimen/dp_120"
+            android:layout_height="wrap_content"
+            android:background="@mipmap/back_m_count_bg"
+            android:layout_gravity="center_vertical"
+            >
+
+            <TextView
+                android:id="@+id/tv_text_give_money"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="@dimen/dp_11"
+                android:layout_marginStart="@dimen/dp_11"
+
+                android:layout_marginTop="@dimen/dp_18"
+                android:text="回款笔数"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_16" />
+
+            <TextView
+                android:id="@+id/tv_give_money_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/tv_text_give_money"
+                android:layout_alignStart="@+id/tv_text_give_money"
+                android:layout_below="@+id/tv_text_give_money"
+                android:text=""
+
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_28"
+                test:text="0/0"
+                android:layout_marginBottom="@dimen/dp_14"
+                android:layout_marginTop="@dimen/dp_7"
+                />
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/dp_13"
+            android:layout_marginStart="@dimen/dp_13"
+            android:layout_weight="1"
+            android:background="@mipmap/back_m_num_bg">
+
+            <TextView
+                android:id="@+id/tv_twogive_money_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_marginTop="@dimen/dp_18"
+                android:text="回款金额"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_16" />
+
+            <TextView
+                android:id="@+id/tv_give_money_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/tv_twogive_money_num"
+                android:layout_alignStart="@+id/tv_twogive_money_num"
+                android:layout_below="@+id/tv_twogive_money_num"
+                android:text=""
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_28"
+                test:text="8803.03"
+                android:layout_marginBottom="@dimen/dp_14"
+
+                android:layout_marginTop="@dimen/dp_6"
+                />
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/rv_today_nodata"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_100"
+        android:layout_marginTop="@dimen/dp_20"
+        android:background="@drawable/gray_bg_draw"
+        android:visibility="gone"
+        test:visibility="visible"
+        >
+
+        <ImageView
+            android:id="@+id/iv_nodata"
+            android:layout_width="@dimen/dp_35"
+            android:layout_height="@dimen/dp_35"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/dp_18"
+            app:srcCompat="@drawable/nodata" />
+
+        <TextView
+            android:id="@+id/tv_nodata_head"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/iv_nodata"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/dp_8"
+            android:text="无回款"
+            android:textColor="@color/gray_item"
+            android:textSize="@dimen/sp_16" />
+    </RelativeLayout>
+
+
+</LinearLayout>

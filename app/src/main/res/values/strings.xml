@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">睿象智能云平台</string>
+    <string name="please_input_phone">请输入手机号</string>
+    <string name="login">登录</string>
+    <string name="register">注册</string>
+    <string name="login_tile">登录账户</string>
+    <string name="please_input_pwd">请输入账户密码</string>
+    <string name="dialog_message">1</string>
+</resources>

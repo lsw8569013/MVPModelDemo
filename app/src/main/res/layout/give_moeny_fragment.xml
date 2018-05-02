@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:test="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    >
+
+    <cn.bingoogolapple.refreshlayout.BGARefreshLayout
+        android:id="@+id/refreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler_give_money"
+            android:layout_width="match_parent"
+            android:layout_height="0dip"
+            test:background="@color/blue"
+            android:overScrollMode="never"
+            android:layout_weight="1"
+            android:scrollbars="none"
+            />
+
+    </cn.bingoogolapple.refreshlayout.BGARefreshLayout>
+
+   <LinearLayout
+       android:id="@+id/ll_top_fragtitle"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:orientation="vertical"
+       android:background="@color/white"
+       >
+
+       <RelativeLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:paddingTop="@dimen/dp_5"
+           android:paddingBottom="@dimen/dp_5"
+           >
+
+           <TextView
+               android:id="@+id/ll_title_gm"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:text="今日放款"
+               android:textSize="@dimen/sp_23"
+               android:gravity="center"
+               android:visibility="gone"
+               test:visibility="visible"
+               android:layout_marginTop="@dimen/dp_5"
+               android:layout_marginBottom="@dimen/dp_5"
+               android:textColor="@color/little_back"
+               />
+
+           <TextView
+               android:id="@+id/tv_check_overdue"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="查询逾期"
+               android:layout_gravity="center_vertical"
+               android:textSize="@dimen/dp_14"
+               android:textColor="@color/little_back"
+               android:layout_centerVertical="true"
+               android:layout_alignParentRight="true"
+               android:layout_marginRight="@dimen/dp_25"
+               android:textStyle="bold"
+               />
+
+       </RelativeLayout>
+
+
+
+    <LinearLayout
+        android:id="@+id/layout_letter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+
+        android:background="@color/white"
+        android:visibility="gone"
+        test:visibility="visible"
+        >
+
+        <TextView
+            android:id="@+id/tv_day_str_frag"
+            android:layout_marginLeft="@dimen/dp_25"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="今日放款"
+            android:textSize="@dimen/sp_16"
+            android:layout_marginTop="@dimen/dp_5"
+            android:layout_marginBottom="@dimen/dp_5"
+            android:textColor="@color/little_back"
+            />
+
+
+        <TextView
+            android:id="@+id/tv_frag_day_count_price"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            test:text="¥ 20 / 16笔"
+            android:textSize="@dimen/sp_16"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginRight="@dimen/dp_25"
+            android:layout_marginTop="@dimen/dp_5"
+            android:gravity="right"
+            android:text="¥ 0 / 0 笔"
+            android:singleLine="true"
+            android:textColor="@color/gray_item"
+            />
+
+        </LinearLayout>
+   </LinearLayout>
+
+</FrameLayout>
+
+
+
+
+
