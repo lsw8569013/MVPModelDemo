@@ -1,0 +1,21 @@
+<resources>
+
+
+
+
+    <style name="popupAnimationAlpha" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/alpha_scale_in</item>
+        <item name="android:windowExitAnimation">@anim/alpha_scale_out</item>
+        <item name="android:windowShowAnimation">@anim/alpha_scale_in</item>
+        <item name="android:windowHideAnimation">@anim/alpha_scale_out</item>
+        <item name="colorAccent">#FFEF7504</item>
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+
+    <!--对话框-->
+    <style name="CustomDialog" parent="android:style/Theme.Dialog">
+        <item name="android:windowBackground">@color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+</resources>

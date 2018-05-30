@@ -1,1 +1,1 @@
-include ':app', ':mvpframe'
+include ':app', ':mvpframe', ':lswutils'
