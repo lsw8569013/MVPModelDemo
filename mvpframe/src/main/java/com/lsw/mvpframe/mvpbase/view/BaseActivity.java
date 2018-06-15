@@ -20,7 +20,7 @@ import butterknife.Unbinder;
  * @param <V>
  * @param <P>
  */
-public abstract class BaseActivity<V,P extends BasePresenter<V>> extends AppCompatActivity {
+public abstract class BaseActivity<V extends BaseView,P extends BasePresenter> extends AppCompatActivity {
 
 	public  String TAG = this.getClass().getName();
 
@@ -60,7 +60,11 @@ public abstract class BaseActivity<V,P extends BasePresenter<V>> extends AppComp
 	 */
 	protected abstract void initData();
 
-
+	/**
+	 * 创建一个与之关联的Presenter
+	 * @return
+	 */
+	protected abstract P  createPresenter();
 
 	public boolean CheckNet(){
 		if(!NetUtils.isNetworkAvailable(MyApplication.getInstance().getContext())){
@@ -69,12 +73,6 @@ public abstract class BaseActivity<V,P extends BasePresenter<V>> extends AppComp
 		}
 		return true;
 	}
-
-	/**
-	 * 创建一个与之关联的Presenter
-	 * @return
-	 */
-	protected abstract P  createPresenter();
 
 	@Override
 	protected void onDestroy() {

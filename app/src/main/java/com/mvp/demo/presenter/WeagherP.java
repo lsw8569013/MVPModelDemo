@@ -11,13 +11,11 @@ import com.mvp.demo.module.WeatherModule;
  * Created by Administrator on 2017/10/20.
  */
 
-public class WeagherP extends BasePresenter<IWeagherView> {
-
-    WeatherModule m = new WeatherModule();
+public class WeagherP extends BasePresenter<IWeagherView,WeatherModule> {
 
     public void showWeather() {
-        if(getView() != null && m != null)
-        m.getWeather(new WeatherModule.onWeatherListener() {
+
+            model.getWeather(new WeatherModule.onWeatherListener() {
             @Override
             public void onComplete(WeatherBean weatherBean) {
                 getView().showWeatherV(weatherBean);

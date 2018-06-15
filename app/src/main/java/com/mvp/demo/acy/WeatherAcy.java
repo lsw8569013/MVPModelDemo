@@ -57,5 +57,13 @@ public class WeatherAcy extends BaseActivity<IWeagherView, WeagherP> implements 
     }
 
 
+    @Override
+    public void loading() {
 
+    }
+
+    @Override
+    public void loadError() {
+
+    }
 }

@@ -7,13 +7,13 @@ package com.lsw.mvpframe.mvpbase.view;
 public interface BaseView {
 
     /**
-     * 加载网络请求
+     * 开始加载网络请求
      */
     void loading();
 
-    /**
-     * 加载完成
-     */
-    void finishLoaded();
 
+    /**
+     * 加载失败
+     */
+    void loadError();
 }
