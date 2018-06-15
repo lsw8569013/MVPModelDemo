@@ -1,0 +1,53 @@
+// 工程组件化配置文件
+ext {
+    applicationId = "com.xpleemoon.sample.modulable"
+
+    // android sdk version
+    // 使用如下：
+    // def versions = rootProject.ext.versions
+    // compileSdkVersion versions.compileSdkVersion
+    // buildToolsVersion versions.buildToolsVersion
+    versions = [
+            compileSdkVersion: 27,
+            minSdkVersion    : 15,
+            targetSdkVersion : 27,
+            versionCode      : 1,
+            versionName      : '1.0.0',
+    ]
+
+    // dependencies
+    // 使用如下：
+    // def dependencies = rootProject.ext.dependencies
+    // compile dependencies.support.design
+    dependencies = [
+            support : [
+                    appcompat : "com.android.support:appcompat-v7:27.1.1",
+                    constraint: "com.android.support.constraint:constraint-layout:1.0.2",
+                    design    : "com.android.support:design:26.1.0"
+            ],
+            arouter : [
+                    api                : "com.alibaba:arouter-api:1.2.4",
+                    annotationProcessor: "com.alibaba:arouter-compiler:1.1.4"
+            ],
+            fastjson: "com.alibaba:fastjson:1.1.67.android",
+
+            okhttp : "com.squareup.okhttp3:okhttp:3.6.0",
+
+            rxandroid : "io.reactivex.rxjava2:rxandroid:2.0.1"
+    ]
+
+    signInfo = [
+            release: [
+                    storeFilePath: '../keystore/component.keystore',
+                    storePassword: '123456',
+                    keyAlias     : 'component',
+                    keyPassword  : '123456'
+            ],
+            debug  : [
+                    storeFilePath: '../keystore/component_debug.keystore',
+                    storePassword: '123456',
+                    keyAlias     : 'component_debug',
+                    keyPassword  : '123456'
+            ]
+    ]
+}

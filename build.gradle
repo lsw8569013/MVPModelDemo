@@ -1,4 +1,5 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
+apply from: 'config/config.gradle'
 
 buildscript {
     
@@ -34,3 +35,28 @@ allprojects {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+
+//ext {
+//
+//    // 通过更改isStandalone的值实现业务模块是否独立运行，以及app壳工程对组件的灵活依赖
+//    modules = [
+//            main: [
+//                    isStandalone : false,
+//                    applicationId: "${rootProject.ext.applicationId}.main",
+//            ],
+//            im  : [
+//                    isStandalone : false,
+//                    applicationId: "${rootProject.ext.applicationId}.im",
+//            ],
+//            live: [
+//                    isStandalone : true,
+//                    applicationId: "${rootProject.ext.applicationId}.live"
+//            ],
+//    ]
+//
+//    userOrg = 'xpleemoon'
+//    groupId = 'com.xpleemoon.xmodulable'
+//    publishVersion = '1.0.1'
+//    website = 'https://github.com/xpleemoon/XModulable'
+//    licences = ['Apache-2.0']
+//}

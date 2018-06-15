@@ -6,8 +6,6 @@ import android.text.TextUtils;
 
 
 import com.lsw.mvpframe.rxhttp.request.ViseConfig;
-import com.vise.log.ViseLog;
-import com.vise.utils.convert.HexUtil;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
