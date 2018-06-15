@@ -1,4 +1,4 @@
-package com.lsw.mvpframe.mvpbase.view;
+package com.lsw.mvpframe.mvpbase.base;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 
 import com.lsw.mvpframe.MyApplication;
 import com.lsw.mvpframe.mvpbase.presenter.BasePresenter;
+import com.lsw.mvpframe.mvpbase.view.BaseView;
 import com.lsw.mvpframe.utils.DialogUtils;
 import com.lsw.mvpframe.utils.NetUtils;
 
@@ -23,7 +24,7 @@ import butterknife.Unbinder;
  * Created by lsw on 2017/11/15.
  */
 
-public abstract class BaseFragment<P extends BasePresenter> extends Fragment {
+public abstract class BaseFragment<V extends BaseView, P extends BasePresenter> extends Fragment {
 
     protected Activity mContext;
     protected P mPresenter;
@@ -46,7 +47,7 @@ public abstract class BaseFragment<P extends BasePresenter> extends Fragment {
         mView = inflater.inflate(getLayoutId(), null);
         mUnBinder = ButterKnife.bind(this, mView);
         createPresenter();
-        mPresenter.attachView(this);
+        mPresenter.attachView((V)this);
 
         initData();
         return mView;

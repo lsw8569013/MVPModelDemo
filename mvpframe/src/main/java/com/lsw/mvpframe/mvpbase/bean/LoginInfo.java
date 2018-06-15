@@ -8,8 +8,10 @@ import java.io.Serializable;
 /**
  * Author: lsw
  * Created by lsw on 2017/11/15.
+ *
+ * 持有 message status 字段
+ * GsonFormat  插件工具自动生成bean
  */
-
 public class LoginInfo extends BaseBean implements Parcelable {
 
 

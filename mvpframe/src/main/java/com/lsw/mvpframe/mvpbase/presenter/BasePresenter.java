@@ -10,10 +10,13 @@ import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Proxy;
 
 /**
- *  泛型V:表示与之关联的Activity fragment
+ *  泛型V:表示与之关联的Activity 或者 fragment
  * @author lsw
  *
- * @param <V>
+ * 默认持有关联的 view module 不需要代码再进行创建
+ *
+ * @param <V> view 引用
+ * @param <M>
  */
 public abstract class BasePresenter<V extends BaseView,M> {
 

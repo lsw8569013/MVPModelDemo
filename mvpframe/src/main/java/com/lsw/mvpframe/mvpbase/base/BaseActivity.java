@@ -1,10 +1,11 @@
-package com.lsw.mvpframe.mvpbase.view;
+package com.lsw.mvpframe.mvpbase.base;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
 import com.lsw.mvpframe.MyApplication;
 import com.lsw.mvpframe.mvpbase.presenter.BasePresenter;
+import com.lsw.mvpframe.mvpbase.view.BaseView;
 import com.lsw.mvpframe.utils.DialogUtils;
 import com.lsw.mvpframe.utils.NetUtils;
 import com.lsw.mvpframe.utils.SharedPreferencesUtils;

@@ -4,7 +4,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.lsw.mvpframe.mvpbase.view.BaseActivity;
+import com.lsw.mvpframe.mvpbase.base.BaseActivity;
 import com.mvp.demo.R;
 import com.mvp.demo.bean.WeatherBean;
 import com.mvp.demo.presenter.WeagherP;
