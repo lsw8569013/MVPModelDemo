@@ -6,6 +6,8 @@ import android.text.TextUtils;
 
 
 import com.lsw.mvpframe.rxhttp.request.ViseConfig;
+import com.vise.log.ViseLog;
+import com.vise.utils.convert.HexUtil;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -17,6 +19,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
+
+import com.vise.log.ViseLog;
+import com.vise.utils.convert.HexUtil;
 
 import okhttp3.Cookie;
 import okhttp3.HttpUrl;
