@@ -37,7 +37,7 @@ public abstract class BasePresenter<V extends BaseView,M> {
 					@Override
 					public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
 						if (mView != null && mView.get() != null) {
-							return method.invoke(mView, args);
+							return method.invoke(mView.get(), args);
 						}
 						return null;
 					}
