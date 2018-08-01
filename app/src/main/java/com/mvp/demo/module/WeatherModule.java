@@ -1,10 +1,8 @@
 package com.mvp.demo.module;
 
 
-
 import com.lsw.mvpframe.rxhttp.callback.ACallback;
 import com.lsw.mvpframe.rxhttp.subscriber.ApiCallbackSubscriber;
-
 import com.mvp.demo.bean.WeatherBean;
 import com.mvp.demo.http.MyRetrofit;
 
@@ -102,6 +100,12 @@ public class WeatherModule {
 
 
     }
+
+    public void getWeather2(final ACallback<WeatherBean> aCallback) {
+        MyRetrofit.getService("北京")
+                .subscribe(new ApiCallbackSubscriber<>(aCallback));
+    }
+
     public interface onWeatherListener{
         void onComplete(WeatherBean weatherBean);
 

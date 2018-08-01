@@ -3,6 +3,7 @@ package com.mvp.demo.presenter;
 
 import com.lsw.mvpframe.mvpbase.presenter.BasePresenter;
 
+import com.lsw.mvpframe.rxhttp.callback.ACallback;
 import com.mvp.demo.view.IWeagherView;
 import com.mvp.demo.bean.WeatherBean;
 import com.mvp.demo.module.WeatherModule;
@@ -15,16 +16,12 @@ public class WeagherP extends BasePresenter<IWeagherView,WeatherModule> {
 
     public void showWeather() {
 
-            model.getWeather(new WeatherModule.onWeatherListener() {
-            @Override
-            public void onComplete(WeatherBean weatherBean) {
-                getView().showWeatherV(weatherBean);
-            }
+            model.getWeather2(new NetCallBack<WeatherBean>() {
+                @Override
+                public void onSuccess(WeatherBean data) {
+                    getView().showWeatherV(data);
+                }
+            });
 
-            @Override
-            public void onCompleteRX(String s) {
-                getView().showWeatherV(s);
-            }
-        });
     }
 }
