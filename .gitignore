@@ -1,7 +1,7 @@
 *.iml
 .gradle
 /local.properties
-/.idea
+/.idea/
 /.idea/libraries
 .DS_Store
 /build
@@ -12,3 +12,11 @@ src/main/java/mvpbase/adapter/
 src/main/res/drawable-v24/
 src/main/res/mipmap-anydpi-v26/
 /lswutils/build/
+app/src/main/java/com/mvp/demo/adapter/
+app/src/main/res/drawable-v24/
+app/src/main/res/mipmap-anydpi-v26/
+lswutils/libs/
+lswutils/src/main/java/hh/
+mvpframe/libs/
+mvpframe/src/main/java/com/lsw/mvpframe/mvpbase/adapter/
+mvpframe/src/main/res/drawable/

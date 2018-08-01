@@ -21,19 +21,38 @@ ext {
     // compile dependencies.support.design
     dependencies = [
             support : [
-                    appcompat : "com.android.support:appcompat-v7:27.1.1",
-                    constraint: "com.android.support.constraint:constraint-layout:1.0.2",
+                    appcompat : 'com.android.support:appcompat-v7:27.1.1',
+                    constraint: 'com.android.support.constraint:constraint-layout:1.0.2',
                     design    : "com.android.support:design:26.1.0"
             ],
             arouter : [
                     api                : "com.alibaba:arouter-api:1.2.4",
                     annotationProcessor: "com.alibaba:arouter-compiler:1.1.4"
             ],
+
             fastjson: "com.alibaba:fastjson:1.1.67.android",
 
             okhttp : "com.squareup.okhttp3:okhttp:3.6.0",
 
-            rxandroid : "io.reactivex.rxjava2:rxandroid:2.0.1"
+            rxandroid : "io.reactivex.rxjava2:rxandroid:2.0.1",
+            rxjava : "io.reactivex.rxjava2:rxjava:2.0.1",
+
+            retrofit : "com.squareup.retrofit2:retrofit:2.3.0",
+            adapter_rxjava : "com.squareup.retrofit2:adapter-rxjava2:2.3.0",
+            converter_gson : "com.squareup.retrofit2:converter-gson:2.3.0",
+
+            butterknife  : [
+                    api :"com.jakewharton:butterknife:8.8.1",
+                    annotationProcessor : 'com.jakewharton:butterknife-compiler:8.8.1'
+                    ],
+
+            glide : [
+                    transformations : 'jp.wasabeef:glide-transformations:3.0.1',
+                    integration : 'com.github.bumptech.glide:okhttp-integration:1.4.0',
+                    api : 'com.github.bumptech.glide:glide:3.7.0'
+            ],
+
+            recyclerview : "com.android.support:recyclerview-v7:27.1.1"
     ]
 
     signInfo = [
