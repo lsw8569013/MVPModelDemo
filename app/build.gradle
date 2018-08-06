@@ -1,5 +1,5 @@
 apply plugin: 'com.android.application'
-
+apply plugin: 'com.alibaba.arouter'
 
 android {
     compileSdkVersion 27
@@ -16,7 +16,12 @@ android {
         generatedDensities = []
         vectorDrawables.generatedDensities = ['hdpi','xxhdpi']
 
-        javaCompileOptions { annotationProcessorOptions { includeCompileClasspath = true } }
+        javaCompileOptions {
+            annotationProcessorOptions {
+                includeCompileClasspath = true
+                arguments = [ moduleName : project.getName()]
+            }
+        }
     }
     buildTypes {
         release {
@@ -60,7 +65,11 @@ dependencies {
     implementation dependencies.glide.api
     implementation dependencies.glide.integration
 
-    implementation 'cn.bingoogolapple:bga-refreshlayout:1.1.7@aar'
+//    implementation 'cn.bingoogolapple:bga-refreshlayout:1.1.7@aar'
+
+    implementation dependencies.arouter.api
+    implementation dependencies.arouter.annotationProcessor
+
 
     implementation project(path: ':mvpframe')
 
