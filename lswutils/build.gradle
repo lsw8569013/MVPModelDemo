@@ -34,7 +34,7 @@ dependencies {
 //    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 
 
-    implementation "jp.wasabeef:glide-transformations:2.0.1"
+    implementation dependencies.glide.transformations
     implementation dependencies.glide.api
 
 }

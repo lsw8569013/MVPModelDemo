@@ -47,7 +47,7 @@ ext {
                     ],
 
             glide : [
-                    transformations : 'jp.wasabeef:glide-transformations:3.0.1',
+                    transformations : 'jp.wasabeef:glide-transformations:2.0.1',
                     integration : 'com.github.bumptech.glide:okhttp-integration:1.4.0',
                     api : 'com.github.bumptech.glide:glide:3.7.0'
             ],
