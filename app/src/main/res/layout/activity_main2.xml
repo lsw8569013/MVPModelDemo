@@ -17,6 +17,9 @@
         android:layout_height="match_parent"
         android:id="@+id/tv_test"
         android:layout_below="@id/btn_getWeather"
+        android:text="跳转"
+        android:gravity="center_horizontal"
+
         />
 
 </RelativeLayout>

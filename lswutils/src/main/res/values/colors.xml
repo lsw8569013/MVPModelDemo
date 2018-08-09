@@ -1,5 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="colorPrimary">#5ccdc8</color>
+    <color name="colorPrimaryDark">#5ccdc8</color>
+    <color name="colorAccent">#5ccdc8</color>
+    <color name="app" >#5ccdc8</color>
+    <color name="black" >#000</color>
+    <color name="white" >#fff</color>
+    <color name="yellow" >#ff0</color>
+    <color name="red" >#f00</color>
+    <color name="green" >#0f0</color>
+    <color name="gray" >#eeeeee</color>
+    <color name="gray2" >#B2B2B2</color>
+    <color name="graylow">#F7F7F7</color>
+    <color name="blue" >#00f</color>
+    <color name="red1" >#ff6046</color>
+    <color name="blue2" >#55A3D7</color>
+    <color name="yellow2" >#F6C46A</color>
+    <color name="ttt" >#00000000</color>
+    <color name="blue3">#1DABEC</color>
+    <color name="transparent_line">#00000000</color>
+    <color name="gray_deep">#F3F3F3</color>
+    <color name="blue5" >#2289EA</color>
+    <color name="red2" >#ffa510</color>
+
+    <color name="gray_white">#e5e5e5</color>
+    <color name="gray_bai">#eeeeee</color>
+    <color name="gray_hint" >#d1d1d1</color>
+
+    <color name="gray_black">#898989</color>
+    <color name="gray_black1">#333333</color>
+    <color name="gray6">#666666</color>
+
     <color name="grayColor">#f7edf0</color>
     <color name="line_color">#E1E1E1</color>
 </resources>

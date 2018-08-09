@@ -1,5 +1,6 @@
 package com.mvp.demo.acy;
 
+import android.content.Intent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -33,6 +34,13 @@ public class WeatherAcy extends BaseActivity<IWeagherView, WeagherP> implements 
     @Override
     protected void initData() {
 
+        tvTest.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(WeatherAcy.this,HomeActivity.class);
+                startActivity(i);
+            }
+        });
     }
 
     @Override

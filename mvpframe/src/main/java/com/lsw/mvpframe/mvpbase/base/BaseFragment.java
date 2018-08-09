@@ -13,6 +13,7 @@ import com.lsw.mvpframe.MyApplication;
 import com.lsw.mvpframe.mvpbase.presenter.BasePresenter;
 import com.lsw.mvpframe.mvpbase.view.BaseView;
 import com.lsw.mvpframe.utils.DialogUtils;
+import com.lsw.mvpframe.utils.LogUtil;
 import com.lsw.mvpframe.utils.NetUtils;
 
 import butterknife.ButterKnife;
@@ -24,7 +25,7 @@ import butterknife.Unbinder;
  * Created by lsw on 2017/11/15.
  */
 
-public abstract class BaseFragment<V extends BaseView, P extends BasePresenter> extends Fragment {
+public abstract class BaseFragment<V extends BaseView, P extends BasePresenter> extends Fragment implements BaseView{
 
     protected Activity mContext;
     protected P mPresenter;
@@ -47,7 +48,12 @@ public abstract class BaseFragment<V extends BaseView, P extends BasePresenter> 
         mView = inflater.inflate(getLayoutId(), null);
         mUnBinder = ButterKnife.bind(this, mView);
         createPresenter();
-        mPresenter.attachView((V)this);
+        if(mPresenter != null){
+            mPresenter.attachView((V)this);
+        }else{
+            LogUtil.e(this.getClass().getName() + "没有创建 mPresenter");
+        }
+
 
         initData();
         return mView;
@@ -75,9 +81,15 @@ public abstract class BaseFragment<V extends BaseView, P extends BasePresenter> 
     @Override
     public void onDestroy() {
         super.onDestroy();
-        if (mPresenter != null) mPresenter.detachView();
-        if (mView != null) mView = null;
-        if (mContext != null) mContext = null;
+        if (mPresenter != null) {
+            mPresenter.detachView();
+        }
+        if (mView != null) {
+            mView = null;
+        }
+        if (mContext != null) {
+            mContext = null;
+        }
     }
 
     public abstract int getLayoutId();

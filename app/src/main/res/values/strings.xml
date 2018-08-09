@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">睿象智能云平台</string>
+    <string name="app_name">mvpDemo</string>
     <string name="please_input_phone">请输入手机号</string>
     <string name="login">登录</string>
     <string name="register">注册</string>
