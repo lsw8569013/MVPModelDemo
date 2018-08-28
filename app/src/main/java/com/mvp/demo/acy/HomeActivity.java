@@ -19,7 +19,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * author: Created by lsw on 2018/8/9 15:15
+ * @author: Created by lsw on 2018/8/9 15:15
  * description:
  */
 public class HomeActivity  extends FragmentActivity implements  View.OnClickListener {
@@ -48,12 +48,11 @@ public class HomeActivity  extends FragmentActivity implements  View.OnClickList
 
         mViewPager = (ViewPager) findViewById(R.id.content);
 
-        mViewPager.setOnPageChangeListener(new MyPagerChangeListener());
-
+        mViewPager.addOnPageChangeListener(new MyPagerChangeListener());
 
         list.add(new HomeFragment());
-//        list.add(new MyMessageFragment());
-//        list.add(new MyInfosFragment());
+        /*list.add(new MyMessageFragment());*/
+        /*list.add(new MyInfosFragment());*/
         adapter = new TabFragmentPagerAdapter(getSupportFragmentManager(), list);
         mViewPager.setAdapter(adapter);
         /*初始化显示第一个页面*/
