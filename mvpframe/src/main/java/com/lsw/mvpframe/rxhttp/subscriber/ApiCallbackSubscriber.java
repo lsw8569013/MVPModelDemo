@@ -1,8 +1,11 @@
 package com.lsw.mvpframe.rxhttp.subscriber;
 
 
+import android.util.Log;
+
 import com.lsw.mvpframe.rxhttp.callback.ACallback;
 import com.lsw.mvpframe.rxhttp.exception.ApiException;
+import com.lsw.mvpframe.utils.LogUtil;
 
 /**
  * @Description: 包含回调的订阅者，如果订阅这个，上层在不使用订阅者的情况下可获得回调
@@ -33,7 +36,12 @@ public class ApiCallbackSubscriber<T> extends ApiSubscriber<T> {
     @Override
     public void onNext(T t) {
         this.data = t;
-        callBack.onSuccess(t);
+        try {
+            callBack.onSuccess(t);
+        }catch (Exception e){
+            Log.e("http ApiCallback","http OK ，UI   --- crash ");
+            e.printStackTrace();
+        }
     }
 
     @Override
