@@ -76,7 +76,8 @@ public class MyApplication extends Application {
                 //配置请求主机地址
 //                .baseUrl("https://api2.lms.alpha.yunlibeauty.com/mobileadmin/")
                 //weather_mini?city=%E5%8C%97%E4%BA%AC
-                .baseUrl("http://www.sojson.com/open/api/")
+//                .baseUrl("http://www.sojson.com/open/api/")
+                .baseUrl("http://t.weather.sojson.com/api/weather/")
                 //配置全局请求头
                 .globalHeaders(new HashMap<String, String>())
                 //配置全局请求参数

@@ -143,8 +143,8 @@ public class HttpServiceHelp {
 
     public interface getWeatherRX{
 
-        @GET("weather/json.shtml")
-        Observable<WeatherBean> getWeather(@Query("city") String city);
+        @GET("city/{citycode}")
+        Observable<WeatherBean> getWeather(@Path("citycode") String citycode);
     }
 
     /**

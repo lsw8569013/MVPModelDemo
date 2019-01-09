@@ -72,7 +72,7 @@ public class WeatherModule {
 //                    }
 //                }));
 
-        MyRetrofit.getService("北京")
+        MyRetrofit.getService("101010100")
                 .subscribe(new ApiCallbackSubscriber<>(new ACallback<WeatherBean>() {
                     @Override
                     public void onSuccess(WeatherBean authorModel) {
