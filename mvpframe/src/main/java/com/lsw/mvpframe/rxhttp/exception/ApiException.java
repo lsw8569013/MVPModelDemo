@@ -1,15 +1,20 @@
 package com.lsw.mvpframe.rxhttp.exception;
 
 import android.net.ParseException;
+import android.text.TextUtils;
 
 import com.google.gson.JsonParseException;
 import com.lsw.mvpframe.rxhttp.mode.ApiCode;
+import com.lsw.mvpframe.utils.GsonUtil;
+import com.lsw.mvpframe.utils.LogUtil;
 
 import org.json.JSONException;
 
+import java.io.IOException;
 import java.net.ConnectException;
 import java.net.SocketTimeoutException;
 
+import okhttp3.ResponseBody;
 import retrofit2.HttpException;
 
 
@@ -20,7 +25,7 @@ import retrofit2.HttpException;
  */
 public class ApiException extends Exception {
 
-    private final int code;
+    private  int code;
     private String message;
 
     public ApiException(Throwable throwable, int code) {
@@ -49,22 +54,55 @@ public class ApiException extends Exception {
     public static ApiException handleException(Throwable e) {
         ApiException ex;
         if (e instanceof HttpException) {
+            ResponseBody body = ((HttpException) e).response().errorBody();
+            try {
+                String msg = body.string();
+//                LogUtil.e(msg);
+                if(!TextUtils.isEmpty(msg)){
+                    //TODO 根据服务器返回的数据 生产异常信息重写此信息
+                    // {"message":"Request resource not found.","status":404}
+                    ServerErrorInfo info = GsonUtil.gson().fromJson(msg,ServerErrorInfo.class);
+                    ex = new ApiException(e, ApiCode.Request.HTTP_ERROR);
+                    ex.code = info.getStatus();
+                    ex.message = info.getMessage();
+                    return ex;
+                }
+
+            } catch (IOException e1) {
+                e1.printStackTrace();
+            }
             HttpException httpException = (HttpException) e;
             ex = new ApiException(e, ApiCode.Request.HTTP_ERROR);
             switch (httpException.code()) {
                 case ApiCode.Http.UNAUTHORIZED:
+                    ex.code = ApiCode.Http.UNAUTHORIZED;
+                    return ex;
                 case ApiCode.Http.FORBIDDEN:
+                    ex.code = ApiCode.Http.FORBIDDEN;
+                    return ex;
                 case ApiCode.Http.NOT_FOUND:
+                    ex.code = ApiCode.Http.NOT_FOUND;
+                    return ex;
                 case ApiCode.Http.REQUEST_TIMEOUT:
+                    ex.code = ApiCode.Http.REQUEST_TIMEOUT;
+                    return ex;
                 case ApiCode.Http.GATEWAY_TIMEOUT:
+                    ex.code = ApiCode.Http.GATEWAY_TIMEOUT;
+                    return ex;
                 case ApiCode.Http.INTERNAL_SERVER_ERROR:
+                    ex.code = ApiCode.Http.UNAUTHORIZED;
+                    return ex;
                 case ApiCode.Http.BAD_GATEWAY:
+                    ex.code = ApiCode.Http.BAD_GATEWAY;
+                    return ex;
                 case ApiCode.Http.SERVICE_UNAVAILABLE:
+                    ex.code = ApiCode.Http.SERVICE_UNAVAILABLE;
+                    return ex;
                 default:
+                    ex.code = ApiCode.Request.NETWORK_ERROR;
                     ex.message = "NETWORK_ERROR";
-                    break;
+                    return ex;
             }
-            return ex;
         } else if (e instanceof JsonParseException || e instanceof JSONException || e instanceof ParseException) {
             ex = new ApiException(e, ApiCode.Request.PARSE_ERROR);
             ex.message = "PARSE_ERROR";

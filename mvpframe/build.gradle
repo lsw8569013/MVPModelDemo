@@ -43,7 +43,7 @@ dependencies {
     implementation dependencies.retrofit
     implementation dependencies.adapter_rxjava
     implementation dependencies.converter_gson
-
+    implementation 'com.google.code.gson:gson:2.8.2'
     implementation 'com.vise.xiaoyaoyou:viseutils:1.1.0'
 
     implementation dependencies.butterknife.api

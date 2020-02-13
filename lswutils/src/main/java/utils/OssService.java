@@ -3,27 +3,6 @@ package utils;
 import android.content.Context;
 import android.util.Log;
 
-import com.alibaba.sdk.android.oss.ClientConfiguration;
-import com.alibaba.sdk.android.oss.ClientException;
-import com.alibaba.sdk.android.oss.OSS;
-import com.alibaba.sdk.android.oss.OSSClient;
-import com.alibaba.sdk.android.oss.ServiceException;
-import com.alibaba.sdk.android.oss.callback.OSSCompletedCallback;
-import com.alibaba.sdk.android.oss.callback.OSSProgressCallback;
-import com.alibaba.sdk.android.oss.common.OSSLog;
-import com.alibaba.sdk.android.oss.common.auth.OSSCredentialProvider;
-import com.alibaba.sdk.android.oss.common.auth.OSSPlainTextAKSKCredentialProvider;
-import com.alibaba.sdk.android.oss.internal.OSSAsyncTask;
-import com.alibaba.sdk.android.oss.model.CompleteMultipartUploadResult;
-import com.alibaba.sdk.android.oss.model.HeadObjectRequest;
-import com.alibaba.sdk.android.oss.model.HeadObjectResult;
-import com.alibaba.sdk.android.oss.model.ListObjectsRequest;
-import com.alibaba.sdk.android.oss.model.ListObjectsResult;
-import com.alibaba.sdk.android.oss.model.MultipartUploadRequest;
-import com.alibaba.sdk.android.oss.model.OSSRequest;
-import com.alibaba.sdk.android.oss.model.PutObjectRequest;
-import com.alibaba.sdk.android.oss.model.PutObjectResult;
-
 import java.io.File;
 
 /**
@@ -31,6 +10,7 @@ import java.io.File;
  * 支持普通上传，普通下载
  */
 public class OssService {
+/*
 
     public OSS mOss;
     private String mBucket;
@@ -130,12 +110,14 @@ public class OssService {
 //        });
 //    }
 
-    /**
+    */
+/**
      * 服务器地址路径
      * @param object
      * @param localFile
      * @param uploadCallBack
-     */
+     *//*
+
     public void asyncPutImage(String object, final String localFile, final UploadCallBack uploadCallBack) {
         final long upload_start = System.currentTimeMillis();
 
@@ -214,7 +196,8 @@ public class OssService {
     }
 
 
-    /*private void asyncMultiPut(@NonNull List<String> pathList, @Nullable OSSCallback callback) {
+    */
+/*private void asyncMultiPut(@NonNull List<String> pathList, @Nullable OSSCallback callback) {
         multiReset();
         final int size = pathList.size();
         for (int i = 0; i < size; i++) {
@@ -312,7 +295,8 @@ public class OssService {
 
             mAsyncTaskMap.put(objectKey, asyncTask);
         }
-    }*/
+    }*//*
+
 
     // Downloads the files with specified prefix in the asynchronous way.
     public void asyncListObjectsWithBucketName() {
@@ -414,6 +398,7 @@ public class OssService {
         });
     }
 
+*/
 
     public interface UploadCallBack {
         void uploadSuccess(String result);

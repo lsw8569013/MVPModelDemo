@@ -13,8 +13,8 @@ import javax.crypto.SecretKeyFactory;
 import javax.crypto.spec.DESedeKeySpec;
 import javax.crypto.spec.SecretKeySpec;
 
-import sun.misc.BASE64Decoder;
-import sun.misc.BASE64Encoder;
+//import sun.misc.BASE64Decoder;
+//import sun.misc.BASE64Encoder;
 
 
 /**
@@ -30,25 +30,25 @@ public class EncryptUtils {
 	 * @param data
 	 * @return
 	 */
-	public static String getBase64EncodeBody(String data) {
-
-		JSONObject jsonObject = null;
-		try {
-			jsonObject = new JSONObject(data);
-			jsonObject.put("body", getBase64Encode(jsonObject.optString("body")));
-		} catch (JSONException e) {
-			e.printStackTrace();
-		}
-
-		return jsonObject.toString();
-	}
-
-	/**
+//	public static String getBase64EncodeBody(String data) {
+//
+//		JSONObject jsonObject = null;
+//		try {
+//			jsonObject = new JSONObject(data);
+//			jsonObject.put("body", getBase64Encode(jsonObject.optString("body")));
+//		} catch (JSONException e) {
+//			e.printStackTrace();
+//		}
+//
+//		return jsonObject.toString();
+//	}
+/*
+	*//**
 	 * 3DES加密后的的Base64加密的结果
 	 *
 	 * @param data
 	 * @return
-	 */
+	 *//*
 	public static String getBase64Encode(String data) {
 		byte[] encode = null;
 		String result = null;
@@ -64,12 +64,12 @@ public class EncryptUtils {
 		return result;
 	}
 
-	/**
+	*//**
 	 * Base64解密后的3DES解密结果
 	 * 
 	 * @param data
 	 * @return
-	 */
+	 *//*
 	public static String getBase64Decode(String data) {
 		BASE64Decoder decoder = new BASE64Decoder();
 		byte[] b;
@@ -82,7 +82,7 @@ public class EncryptUtils {
 			e.printStackTrace();
 		}
 		return "";
-	}
+	}*/
 
 	/**
 	 * ECB加密

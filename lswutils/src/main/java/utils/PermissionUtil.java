@@ -149,8 +149,8 @@ public class PermissionUtil {
             strPermissons = strPermissons.replace(",", "、");
             String strAppName = activity.getString(R.string.app_name);
             String strMessage = activity.getString(R.string.permission_message);
-          strMessage = String.format(strMessage, strAppName, strPermissons);
-            permissionCallBack.onPermissionReject(strMessage);
+//          strMessage = String.format(strMessage, strAppName, strPermissons);
+//            permissionCallBack.onPermissionReject(strMessage);
 
         } else {
             permissionCallBack.onPermissionSuccess();

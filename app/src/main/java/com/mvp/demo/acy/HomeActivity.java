@@ -13,7 +13,7 @@ import android.widget.TextView;
 
 import com.lsw.home.HomeFragment;
 import com.mvp.demo.R;
-import com.mvp.demo.adapter.TabFragmentPagerAdapter;
+
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,7 +29,7 @@ public class HomeActivity  extends FragmentActivity implements  View.OnClickList
     private Dialog dialog;
     private Context context;
     private List<Fragment> list = new ArrayList<>();
-    private TabFragmentPagerAdapter adapter;
+//    private TabFragmentPagerAdapter adapter;
     private ViewPager mViewPager;
 
     private TextView text_recovery, text_promotion, text_personal;
@@ -53,8 +53,8 @@ public class HomeActivity  extends FragmentActivity implements  View.OnClickList
         list.add(new HomeFragment());
         /*list.add(new MyMessageFragment());*/
         /*list.add(new MyInfosFragment());*/
-        adapter = new TabFragmentPagerAdapter(getSupportFragmentManager(), list);
-        mViewPager.setAdapter(adapter);
+//        adapter = new TabFragmentPagerAdapter(getSupportFragmentManager(), list);
+//        mViewPager.setAdapter(adapter);
         /*初始化显示第一个页面*/
         mViewPager.setCurrentItem(0);
 

@@ -28,9 +28,9 @@ public class WaterUtils {
         int w = src.getWidth();
         int h = src.getHeight();
 //        Log.e("lsw","new ---- waterUtils");
-        Bitmap usrBitmap = resizeBitmap(((BitmapDrawable) resources.getDrawable(R.mipmap.icon_img_user)).getBitmap(), 28, 28);
-        Bitmap timeBitmap = resizeBitmap(((BitmapDrawable) resources.getDrawable(R.mipmap.icon_img_time)).getBitmap(), 28, 28);
-        Bitmap addrBitmap = resizeBitmap(((BitmapDrawable) resources.getDrawable(R.mipmap.icon_img_addr)).getBitmap(), 22, 30);
+        Bitmap usrBitmap = resizeBitmap(((BitmapDrawable) resources.getDrawable(R.mipmap.icon_messged)).getBitmap(), 28, 28);
+        Bitmap timeBitmap = resizeBitmap(((BitmapDrawable) resources.getDrawable(R.mipmap.icon_messged)).getBitmap(), 28, 28);
+        Bitmap addrBitmap = resizeBitmap(((BitmapDrawable) resources.getDrawable(R.mipmap.icon_messged)).getBitmap(), 22, 30);
 
         int ww = usrBitmap.getWidth();
         int wh = usrBitmap.getHeight();
@@ -74,13 +74,13 @@ public class WaterUtils {
             mCanvas.drawText("地点："+addr, 20, h-20, textPaint);*/
 
             if(usrBitmap == null){
-                usrBitmap = resizeBitmap(((BitmapDrawable) resources.getDrawable(R.mipmap.icon_img_user)).getBitmap(), 28, 28);
+                usrBitmap = resizeBitmap(((BitmapDrawable) resources.getDrawable(R.mipmap.icon_messged)).getBitmap(), 28, 28);
             }
             if(timeBitmap == null){
-                timeBitmap = resizeBitmap(((BitmapDrawable) resources.getDrawable(R.mipmap.icon_img_time)).getBitmap(), 28, 28);
+                timeBitmap = resizeBitmap(((BitmapDrawable) resources.getDrawable(R.mipmap.icon_messged)).getBitmap(), 28, 28);
             }
             if(addrBitmap == null){
-                addrBitmap = resizeBitmap(((BitmapDrawable) resources.getDrawable(R.mipmap.icon_img_addr)).getBitmap(), 22, 30);
+                addrBitmap = resizeBitmap(((BitmapDrawable) resources.getDrawable(R.mipmap.icon_messged)).getBitmap(), 22, 30);
             }
 
             mCanvas.drawBitmap(usrBitmap, 20, h - wwwh - wwh - wh - 30, paint);

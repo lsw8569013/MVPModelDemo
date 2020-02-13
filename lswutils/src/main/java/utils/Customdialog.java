@@ -162,105 +162,106 @@ public class Customdialog extends Dialog implements DialogInterface{
         public Customdialog create() {
             LayoutInflater inflater = (LayoutInflater) context
                     .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            // instantiate the dialog with the custom Theme
-            final Customdialog dialog = new Customdialog(context, R.style.Dialog);
-            View layout = inflater.inflate(R.layout.dialog_normal_layout, null);
-            dialog.addContentView(layout, new LayoutParams(
-                    LayoutParams.FILL_PARENT, LayoutParams.WRAP_CONTENT));
-            // set the dialog title
-            if (title != null) {
-                ((TextView) layout.findViewById(R.id.title)).setText(title);
-            } else {
-                layout.findViewById(R.id.title_li).setVisibility(View.GONE);
-            }
-            if(close){
-                layout.findViewById(R.id.close).setVisibility(View.VISIBLE);
-                layout.findViewById(R.id.close).setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                       // dialog.cancel();
-                        if(negativeButtonClickListener!=null){
-                            negativeButtonClickListener.onClick(dialog,
-                                    DialogInterface.BUTTON_NEGATIVE);
-                        }else {
-                            if(positiveButtonClickListener != null){
-                                positiveButtonClickListener.onClick(dialog,
-                                        DialogInterface.BUTTON_NEGATIVE);
-                            }
-                        }
-
-                    }
-                });
-            }else {
-                layout.findViewById(R.id.close).setVisibility(View.GONE);
-            }
-            // set the confirm button
-            if (positiveButtonText != null) {
-                ((Button) layout.findViewById(R.id.positiveButton))
-                        .setText(positiveButtonText);
-                if (positiveButtonClickListener != null) {
-                    ((Button) layout.findViewById(R.id.positiveButton))
-                            .setOnClickListener(new View.OnClickListener() {
-                                public void onClick(View v) {
-                                    positiveButtonClickListener.onClick(dialog,
-                                            DialogInterface.BUTTON_POSITIVE);
-                                }
-                            });
-                }
-            } else {
-                // if no confirm button just set the visibility to GONE
-                layout.findViewById(R.id.positiveButton).setVisibility(
-                        View.GONE);
-            }
-            // set the cancel button
-            if (negativeButtonText != null) {
-                ((Button) layout.findViewById(R.id.negativeButton))
-                        .setText(negativeButtonText);
-                btn= (Button) layout.findViewById(R.id.positiveButton);
-                if(click){
-                    btn.setText(positiveButtonText);
-                }else {
-//                    timer = new Timer();
-//                    myTask = new MyTask();
-//                    timer.schedule(myTask, 0, 1000);
-
-                    handler.sendEmptyMessage(1);
-                }
-
-                if (negativeButtonClickListener != null) {
-                    ((Button) layout.findViewById(R.id.negativeButton))
-                            .setOnClickListener(new View.OnClickListener() {
-                                public void onClick(View v) {
-                                    negativeButtonClickListener.onClick(dialog,
-                                            DialogInterface.BUTTON_NEGATIVE);
-                                }
-                            });
-                }
-            } else {
-                // if no confirm button just set the visibility to GONE
-                layout.findViewById(R.id.negativeButton).setVisibility(
-                        View.GONE);
-                ((Button) layout.findViewById(R.id.positiveButton)).setBackgroundResource(R.drawable.shape_dialog_search_ok);
-            }
-            // set the content message
-            if (message != null) {
-                if(size>0){
-                    ((TextView) layout.findViewById(R.id.message)).setTextSize(size);
-                }
-                ((TextView) layout.findViewById(R.id.message)).setText(message);
-            } else if (contentView != null) {
-                // if no message set
-                // add the contentView to the dialog body
-                ((LinearLayout) layout.findViewById(R.id.content))
-                        .removeAllViews();
-                ((LinearLayout) layout.findViewById(R.id.content))
-                        .addView(contentView, new LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.FILL_PARENT));
-            }
-            if (null==positiveButtonText&&null==positiveButtonText){
-                layout.findViewById(R.id.button_li).setVisibility(View.GONE);
-            }
-            dialog.setContentView(layout);
-            dialog.setCancelable(onclick);
+//            // instantiate the dialog with the custom Theme
+            Customdialog dialog = null;
+//            final Customdialog dialog = new Customdialog(context, R.style.Dialog);
+//            View layout = inflater.inflate(R.layout.dialog_normal_layout, null);
+//            dialog.addContentView(layout, new LayoutParams(
+//                    LayoutParams.FILL_PARENT, LayoutParams.WRAP_CONTENT));
+//            // set the dialog title
+//            if (title != null) {
+//                ((TextView) layout.findViewById(R.id.title)).setText(title);
+//            } else {
+//                layout.findViewById(R.id.title_li).setVisibility(View.GONE);
+//            }
+//            if(close){
+//                layout.findViewById(R.id.close).setVisibility(View.VISIBLE);
+//                layout.findViewById(R.id.close).setOnClickListener(new View.OnClickListener() {
+//                    @Override
+//                    public void onClick(View view) {
+//                       // dialog.cancel();
+//                        if(negativeButtonClickListener!=null){
+//                            negativeButtonClickListener.onClick(dialog,
+//                                    DialogInterface.BUTTON_NEGATIVE);
+//                        }else {
+//                            if(positiveButtonClickListener != null){
+//                                positiveButtonClickListener.onClick(dialog,
+//                                        DialogInterface.BUTTON_NEGATIVE);
+//                            }
+//                        }
+//
+//                    }
+//                });
+//            }else {
+//                layout.findViewById(R.id.close).setVisibility(View.GONE);
+//            }
+//            // set the confirm button
+//            if (positiveButtonText != null) {
+//                ((Button) layout.findViewById(R.id.positiveButton))
+//                        .setText(positiveButtonText);
+//                if (positiveButtonClickListener != null) {
+//                    ((Button) layout.findViewById(R.id.positiveButton))
+//                            .setOnClickListener(new View.OnClickListener() {
+//                                public void onClick(View v) {
+//                                    positiveButtonClickListener.onClick(dialog,
+//                                            DialogInterface.BUTTON_POSITIVE);
+//                                }
+//                            });
+//                }
+//            } else {
+//                // if no confirm button just set the visibility to GONE
+//                layout.findViewById(R.id.positiveButton).setVisibility(
+//                        View.GONE);
+//            }
+//            // set the cancel button
+//            if (negativeButtonText != null) {
+//                ((Button) layout.findViewById(R.id.negativeButton))
+//                        .setText(negativeButtonText);
+//                btn= (Button) layout.findViewById(R.id.positiveButton);
+//                if(click){
+//                    btn.setText(positiveButtonText);
+//                }else {
+////                    timer = new Timer();
+////                    myTask = new MyTask();
+////                    timer.schedule(myTask, 0, 1000);
+//
+//                    handler.sendEmptyMessage(1);
+//                }
+//
+//                if (negativeButtonClickListener != null) {
+//                    ((Button) layout.findViewById(R.id.negativeButton))
+//                            .setOnClickListener(new View.OnClickListener() {
+//                                public void onClick(View v) {
+//                                    negativeButtonClickListener.onClick(dialog,
+//                                            DialogInterface.BUTTON_NEGATIVE);
+//                                }
+//                            });
+//                }
+//            } else {
+//                // if no confirm button just set the visibility to GONE
+//                layout.findViewById(R.id.negativeButton).setVisibility(
+//                        View.GONE);
+//                ((Button) layout.findViewById(R.id.positiveButton)).setBackgroundResource(R.drawable.shape_dialog_search_ok);
+//            }
+//            // set the content message
+//            if (message != null) {
+//                if(size>0){
+//                    ((TextView) layout.findViewById(R.id.message)).setTextSize(size);
+//                }
+//                ((TextView) layout.findViewById(R.id.message)).setText(message);
+//            } else if (contentView != null) {
+//                // if no message set
+//                // add the contentView to the dialog body
+//                ((LinearLayout) layout.findViewById(R.id.content))
+//                        .removeAllViews();
+//                ((LinearLayout) layout.findViewById(R.id.content))
+//                        .addView(contentView, new LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.FILL_PARENT));
+//            }
+//            if (null==positiveButtonText&&null==positiveButtonText){
+//                layout.findViewById(R.id.button_li).setVisibility(View.GONE);
+//            }
+//            dialog.setContentView(layout);
+//            dialog.setCancelable(onclick);
             return dialog;
         }
         private int i = 0;
@@ -279,11 +280,11 @@ public class Customdialog extends Dialog implements DialogInterface{
                             @Override
                             public void run() {
                                 if (i > 0) {
-                                    if(negativeButtonText!=null){
-                                        btn.setBackgroundResource(R.drawable.shape_dialog_search_gray_ok1);
-                                    }else {
-                                        btn.setBackgroundResource(R.drawable.shape_dialog_search_gray_ok);
-                                    }
+//                                    if(negativeButtonText!=null){
+//                                        btn.setBackgroundResource(R.drawable.shape_dialog_search_gray_ok1);
+//                                    }else {
+//                                        btn.setBackgroundResource(R.drawable.shape_dialog_search_gray_ok);
+//                                    }
                                     btn  .setText((i--) + "s ");
                                     btn.setEnabled(false);
 
@@ -293,11 +294,11 @@ public class Customdialog extends Dialog implements DialogInterface{
                                     btn.setEnabled(true);
 
                                     btn.setText(positiveButtonText);
-                                    if(negativeButtonText!=null){
-                                        btn.setBackgroundResource(R.drawable.shape_dialog_search_ok1);
-                                    }else {
-                                        btn.setBackgroundResource(R.drawable.shape_dialog_search_ok);
-                                    }
+//                                    if(negativeButtonText!=null){
+//                                        btn.setBackgroundResource(R.drawable.shape_dialog_search_ok1);
+//                                    }else {
+//                                        btn.setBackgroundResource(R.drawable.shape_dialog_search_ok);
+//                                    }
                                     // q去掉time 没有必要 2018 5-5
 //                                    if (myTask != null) {
 //                                        myTask.cancel();

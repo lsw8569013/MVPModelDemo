@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">lswutils</string>
+    <string name="permission_storage">1</string>
+    <string name="permission_phone">2</string>
+    <string name="permission_location">2</string>
+    <string name="permission_camera">2</string>
+    <string name="permission_read">2</string>
+    <string name="permission_message"></string>
 </resources>

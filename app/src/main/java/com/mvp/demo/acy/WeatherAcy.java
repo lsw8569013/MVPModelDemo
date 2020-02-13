@@ -48,6 +48,7 @@ public class WeatherAcy extends BaseActivity<IWeagherView, WeagherP> implements 
         return new WeagherP();
     }
 
+    // 发送请求
     public void getWeatherClick(View view) {
         presenter.showWeather();
     }

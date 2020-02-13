@@ -6,6 +6,7 @@ import android.widget.Toast;
 
 import com.google.gson.JsonSyntaxException;
 import com.lsw.mvpframe.utils.DialogUtils;
+import com.lsw.mvpframe.utils.GsonUtil;
 
 import java.net.ConnectException;
 import java.net.SocketTimeoutException;

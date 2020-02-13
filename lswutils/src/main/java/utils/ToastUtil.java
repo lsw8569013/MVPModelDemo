@@ -2,6 +2,7 @@ package utils;
 
 import android.app.Application;
 import android.content.Context;
+import android.util.Log;
 import android.view.Gravity;
 import android.widget.Toast;
 
@@ -19,6 +20,10 @@ public class ToastUtil {
     private ToastUtil() {
         /* cannot be instantiated */
         throw new UnsupportedOperationException("cannot be instantiated");
+    }
+
+    public static void setContext(Context context) {
+        ToastUtil.context = context;
     }
 
     /**
@@ -76,13 +81,17 @@ public class ToastUtil {
      * @param message
      */
     public static void show(Context context, CharSequence message) {
+        if(context == null){
+            Log.e("TAG",message.toString());
+            return;
+        }
         if (isShow)
             Toast.makeText(context, message, Toast.LENGTH_SHORT).show();
     }
 
 
     public static void show( CharSequence message) {
-        if (isShow)
+        if (isShow && context!= null)
             Toast.makeText(context, message, Toast.LENGTH_SHORT).show();
     }
     /**

@@ -5,7 +5,6 @@
       <module fileurl="file://$PROJECT_DIR$/MVPModelDemo.iml" filepath="$PROJECT_DIR$/MVPModelDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/home/home.iml" filepath="$PROJECT_DIR$/home/home.iml" />
-      <module fileurl="file://$PROJECT_DIR$/instantapp/instantapp.iml" filepath="$PROJECT_DIR$/instantapp/instantapp.iml" />
       <module fileurl="file://$PROJECT_DIR$/lswutils/lswutils.iml" filepath="$PROJECT_DIR$/lswutils/lswutils.iml" />
       <module fileurl="file://$PROJECT_DIR$/mvpframe/mvpframe.iml" filepath="$PROJECT_DIR$/mvpframe/mvpframe.iml" />
     </modules>

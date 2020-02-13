@@ -1,6 +1,8 @@
 package com.mvp.demo.module;
 
 
+import com.lsw.mvpframe.mvpbase.bean.BaseBean;
+import com.lsw.mvpframe.mvpbase.http.HttpObserverImpl;
 import com.lsw.mvpframe.rxhttp.callback.ACallback;
 import com.lsw.mvpframe.rxhttp.subscriber.ApiCallbackSubscriber;
 import com.mvp.demo.bean.WeatherBean;

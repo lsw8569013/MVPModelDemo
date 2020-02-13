@@ -1,6 +1,10 @@
 package com.mvp.demo.presenter;
 
+
+import android.content.Context;
+
 import com.lsw.mvpframe.rxhttp.callback.ACallback;
+import com.mvp.demo.MyApplication;
 
 import utils.ToastUtil;
 
@@ -10,7 +14,9 @@ import utils.ToastUtil;
  */
 public abstract class NetCallBack<T> extends ACallback<T> {
     @Override
+
     public void onFail(int errCode, String errMsg) {
-        ToastUtil.show(errMsg+"-"+errCode);
+        Context context = MyApplication.getInstance().getContext();
+        ToastUtil.show(context,errMsg+"-"+errCode);
     }
 }
