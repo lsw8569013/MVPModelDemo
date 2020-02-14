@@ -6,8 +6,11 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.lsw.mvpframe.mvpbase.base.BaseActivity;
+import com.lsw.mvpframe.rxhttp.subscriber.ApiCallbackSubscriber;
 import com.mvp.demo.R;
 import com.mvp.demo.bean.WeatherBean;
+import com.mvp.demo.http.NetRetrofitUtil;
+import com.mvp.demo.presenter.NetCallBack;
 import com.mvp.demo.presenter.WeagherP;
 import com.mvp.demo.view.IWeagherView;
 
@@ -50,7 +53,17 @@ public class WeatherAcy extends BaseActivity<IWeagherView, WeagherP> implements 
 
     // 发送请求
     public void getWeatherClick(View view) {
-        presenter.showWeather();
+//        presenter.showWeather();
+
+        NetRetrofitUtil.getWeather("101030100",
+                new ApiCallbackSubscriber<>(
+                        new NetCallBack<WeatherBean>() {
+                            @Override
+                            public void onSuccess(WeatherBean data) {
+                                showWeatherV(data);
+                            }
+                        }
+                ));
     }
 
     @Override

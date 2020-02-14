@@ -6,6 +6,7 @@ import android.content.res.AssetManager;
 
 
 import com.lsw.mvpframe.mvpbase.http.OkHttpLoggingInterceptor;
+import com.lsw.mvpframe.netutil.base.NetWorkApi;
 import com.lsw.mvpframe.rxhttp.ViseHttp;
 
 import java.io.IOException;
@@ -36,6 +37,7 @@ public class MyApplication extends Application {
         super.onCreate();
         mContext = this;
         initNet();
+        NetWorkApi.init(new CommonNetWork());
     }
 
 

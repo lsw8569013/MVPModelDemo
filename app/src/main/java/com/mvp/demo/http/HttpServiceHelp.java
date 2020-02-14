@@ -17,7 +17,7 @@ import retrofit2.http.Path;
 import retrofit2.http.Query;
 
 /**
- * 定义 具体请求 接口
+ * 定义 具体的请求接口（请求类型 参数 ）
  * Created by Administrator on 2017/10/18.
  */
 public class HttpServiceHelp {
@@ -142,6 +142,9 @@ public class HttpServiceHelp {
     }
 
     public interface getWeatherRX{
+
+//        @GET("weather/json.shtml")
+//        Observable<WeatherBean> getWeather(@Query("city") String city);
 
         @GET("city/{citycode}")
         Observable<WeatherBean> getWeather(@Path("citycode") String citycode);

@@ -45,6 +45,7 @@ dependencies {
     implementation dependencies.converter_gson
     implementation 'com.google.code.gson:gson:2.8.2'
     implementation 'com.vise.xiaoyaoyou:viseutils:1.1.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.4.1'
 
     implementation dependencies.butterknife.api
 

@@ -104,7 +104,9 @@ public class WeatherModule {
     }
 
     public void getWeather2(final ACallback<WeatherBean> aCallback) {
-        MyRetrofit.getService("北京")
+
+//        MyRetrofit.getService("101010100") // 北京
+        MyRetrofit.getService("101030100") // 天津
                 .subscribe(new ApiCallbackSubscriber<>(aCallback));
     }
 
